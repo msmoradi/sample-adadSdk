@@ -164,4 +164,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        if (bannerAdView != null) {
+            bannerAdView.onStop();
+        }
+        super.onStop();
+    }
+
+
+    @Override
+    protected void onResume() {
+        if (bannerAdView != null) {
+            bannerAdView.onResume();
+        }
+        super.onResume();
+    }
+
+
+    @Override
+    protected void onPause() {
+        if (bannerAdView != null) {
+            bannerAdView.onPause();
+        }
+        super.onPause();
+    }
 }
