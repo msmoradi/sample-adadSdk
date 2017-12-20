@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.deeas.testadadsdk.MainActivity">
+
+    <Button
+        android:id="@+id/btn_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_prepareVideo"
+        app:layout_constraintTop_toBottomOf="@+id/btn_interstitial" />
+
+    <Button
+        android:id="@+id/btn_prepareVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prepare Video"
+        app:layout_constraintEnd_toStartOf="@+id/btn_video"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_interstitial" />
+
+    <Button
+        android:id="@+id/btn_interstitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interstitial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_preparInterstitial"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_preparInterstitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prepare Interstitial"
+        app:layout_constraintEnd_toStartOf="@+id/btn_interstitial"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ir.adad.adadsdkv6.core.banner.BannerAdView
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></ir.adad.adadsdkv6.core.banner.BannerAdView>
+
+</android.support.constraint.ConstraintLayout>
