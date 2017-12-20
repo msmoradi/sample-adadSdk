@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.hmomeni.mygame"
+        applicationId "com.example.deeas.testadadsdk"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
@@ -26,6 +26,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    compile 'ir.adad.androidsdkv6:AdadSDKv6:6.0.8.7'
+    compile 'ir.adad.androidsdkv6:AdadSDKv6:6.0.8.8'
 
 }

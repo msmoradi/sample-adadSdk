@@ -13,7 +13,7 @@ public class App extends Application {
         super.onCreate();
 
         // Input Your Token
-        ADAD.init("173c94e65cec46faa1c29b3547cff707");
+        ADAD.init("2ca798994fbe474daa7f6f4f09112612");
 
     }
 }
