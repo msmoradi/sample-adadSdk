@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import ir.adad.adadsdkv6.core.banner.BannerAdListener;
-import ir.adad.adadsdkv6.core.banner.BannerAdView;
+import ir.adad.adadsdkv6.core.banner.views.BannerAdView;
 import ir.adad.adadsdkv6.core.interstitial.InterstitialAd;
 import ir.adad.adadsdkv6.core.interstitial.InterstitialAdListener;
 import ir.adad.adadsdkv6.core.video.VideoAdFactory;
@@ -17,9 +17,12 @@ import ir.adad.adadsdkv6.utils.AdType;
 public class MainActivity extends AppCompatActivity {
 
 
+
+
     public BannerAdView bannerAdView;
     public InterstitialAd interstitialAd;
     public VideoAd videoAd;
+    private String TAG = "ADAD TEST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,27 +41,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdFailedToLoad(int i) {
                 // Code to be executed when an ad request fails.
+                Log.i(TAG, "(ADAD) bannerAdView --> onAdFailedToLoad : " + " errorNumber =" + i);
+
             }
 
             @Override
             public void onAdShow() {
                 // Code to be executed when an ad show.
+                Log.i(TAG, "(ADAD) bannerAdView --> onAdShow: ");
+
 
             }
 
             @Override
             public void onAdClosed() {
                 // Code to be executed when an ad closed.
+                Log.i(TAG, "(ADAD) bannerAdView --> onAdClosed: ");
+
             }
 
             @Override
             public void onAdAvailable() {
                 // Code to be executed when an ad finishes loading.
+                Log.i(TAG, "(ADAD) bannerAdView --> onAdAvailable: ");
+
             }
 
             @Override
             public void onAdClicked() {
                 // Code to be executed when an ad clicked.
+                Log.i(TAG, "(ADAD) bannerAdView --> onAdClicked: ");
+
             }
         });
 
@@ -79,37 +92,42 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdOpened() {
                 // Code to be executed when an ad show.
+                Log.i(TAG, "(ADAD) interstitialAd --> onAdOpened: ");
 
             }
 
             @Override
             public void onAdClosed() {
                 // Code to be executed when an ad closed.
+                Log.i(TAG, "(ADAD) interstitialAd --> onAdClosed: ");
 
             }
 
             @Override
             public void onAdClicked() {
                 // Code to be executed when an ad clicked.
+                Log.i(TAG, "(ADAD) interstitialAd --> onAdClicked: ");
 
             }
 
             @Override
             public void onAdFailedToLoad(int i) {
                 // Code to be executed when an ad request fails.
+                Log.i(TAG, "(ADAD) interstitialAd --> onAdFailedToLoad: " + " errorNumber = " + i);
 
             }
 
             @Override
             public void onAdLoaded(InterstitialAd interstitialAd) {
                 // Code to be executed when an ad loaded.
+                Log.i(TAG, "(ADAD) interstitialAd --> onAdLoaded: ");
 
             }
         });
 
         // initialise videoAd
         videoAd = VideoAdFactory.getInstance(this)
-                .setAdType(AdType.FULLSCVIDEO)
+                .setAdType(AdType.REWARDEDVIDEO)
                 .setUserId("User Id")
                 .build();
 
@@ -117,15 +135,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdFinished(boolean b, boolean b1, int i) {
 
-                Log.d("ADAD SDK", "onAdFinished -> " + " wasSuccessfulView  : " + b + " wasCallToActionClicked : " + b1 + " skipTime :" + i);
+                Log.i(TAG, "(ADAD) rewardedVideoAd --> onAdFinished: " + "wasSuccessfulView = " + b + "wasCallToActionClicked = " + b1 + "skipTime = " + i);
 
             }
             @Override
             public void onAdStarted() {
+                Log.i(TAG, "(ADAD) rewardedVideoAd --> onAdStarted: ");
 
             }
             @Override
             public void onAdFailedToLoad(int i) {
+                Log.i(TAG, "(ADAD) rewardedVideoAd --> onAdFailedToLoad: " + "reason = " + i);
 
             }
         });
@@ -134,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_interstitial).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (interstitialAd.isAdLoaded())
                     interstitialAd.showAd();
             }
         });
@@ -142,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (videoAd.isAdLoaded())
                     videoAd.showAd();
             }
         });
@@ -153,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 videoAd.prepareAd();
             }
         });
+
         findViewById(R.id.btn_preparInterstitial).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -47,12 +47,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ir.adad.adadsdkv6.core.banner.BannerAdView
+
+    <ir.adad.adadsdkv6.core.banner.views.BannerAdView
         android:id="@+id/banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></ir.adad.adadsdkv6.core.banner.BannerAdView>
+        app:layout_constraintStart_toStartOf="parent">
+
+    </ir.adad.adadsdkv6.core.banner.views.BannerAdView>
+
 
 </android.support.constraint.ConstraintLayout>
